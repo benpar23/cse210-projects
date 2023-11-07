@@ -18,7 +18,13 @@ class Program
         job2._startYear = 2000;
         job2._endYear = 2003;
 
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
+        Resume myResume = new Resume();
+
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
+        
+        myResume.DisplayResume();
+
+       
     }
 }
