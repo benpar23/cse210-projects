@@ -1,6 +1,8 @@
 public class Journal
 {
-    public void AddEntry()
+    public List<Entry> _entries;
+
+    public void AddEntry(Entry newEntry)
     {
 
     }
@@ -8,12 +10,12 @@ public class Journal
     {
 
     }
-    public void SaveToFile()
+    public void SaveToFile(string file)
     {
 
     }
-    public void LoadFromFile()
+    public void LoadFromFile(string file)
     {
-        
+
     }
 }
