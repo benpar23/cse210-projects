@@ -4,8 +4,48 @@ class Program
 {
     static void Main(string[] args)
     {
-        PromptGenerator _prompt = new PromptGenerator();
+        int choice = 0;
 
-        Console.WriteLine(_prompt.GetRandomPrompt());
+        Journal newJournal = new Journal();
+        
+        
+        while (choice != 5)
+        {
+            Console.WriteLine("Please select one of the following choices:\r\n1. Write\r\n2. Display\r\n3. Load\r\n4. Save\r\n5. Quit");
+
+            Console.WriteLine("What would you like to do?");
+            choice = int.Parse(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                
+
+                Entry newEntry = new Entry();
+
+                PromptGenerator _prompt = new PromptGenerator();
+
+                newEntry._promptText = _prompt.GetRandomPrompt();
+
+                Console.WriteLine(newEntry._promptText);
+
+                newEntry._entryText = Console.ReadLine();
+
+                DateTime _date = DateTime.Now;
+
+                newEntry._date = _date.ToString("dd MMMM yyyy");
+
+                newJournal.AddEntry(newEntry);
+            }
+
+            else if (choice == 2)
+            {
+                newJournal.DisplayAll();
+            }
+
+            
+
+            
+        }
+
     }
 }

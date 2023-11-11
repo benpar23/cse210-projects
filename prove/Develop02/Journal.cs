@@ -8,7 +8,10 @@ public class Journal
     }
     public void DisplayAll()
     {
-
+        foreach (Entry _entry in _entries) 
+        {
+            _entry.Display();
+        }
     }
     public void SaveToFile(string file)
     {
