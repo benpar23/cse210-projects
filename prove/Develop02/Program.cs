@@ -40,8 +40,15 @@ class Program
                 newJournal.DisplayAll();
             }
 
-            
+            else if (choice == 3)
+            {
+                newJournal.LoadFromFile(Console.ReadLine());
+            }
 
+            else if (choice == 4)
+            {
+                newJournal.SaveToFile(Console.ReadLine());
+            }
             
         }
 
