@@ -51,8 +51,6 @@ class Program
             {
                 newJournal.SaveToFile(Console.ReadLine());
             }
-            
         }
-
     }
 }

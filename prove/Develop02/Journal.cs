@@ -9,28 +9,28 @@ public class Journal
     }
     public void DisplayAll()
     {
-        foreach (Entry _entry in _entries) 
+        foreach (Entry entry in _entries) 
         {
-            _entry.Display();
+            entry.Display();
         }
     }
     public void SaveToFile(string file)
     {
         using (StreamWriter sw = new StreamWriter(file))
         {
-            foreach (Entry _entry in _entries)
+            foreach (Entry entry in _entries)
             {
-                sw.WriteLine($"{_entry._date}~{_entry._promptText}~{_entry._entryText}");
+                sw.WriteLine($"{entry._date}~{entry._promptText}~{entry._entryText}");
             }
         }
     }
     public void LoadFromFile(string file)
     {
-        string[] _lines = File.ReadAllLines(file);
+        string[] lines = File.ReadAllLines(file);
 
-        foreach (string _line in _lines)
+        foreach (string line in lines)
         {
-            string[] parts = _line.Split("~");
+            string[] parts = line.Split("~");
 
             Entry newEntry = new Entry
             {
