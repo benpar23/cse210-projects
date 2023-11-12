@@ -26,19 +26,18 @@ public class Journal
     }
     public void LoadFromFile(string file)
     {
-        // StreamReader sr = new StreamReader(file);
         string[] _lines = File.ReadAllLines(file);
-
 
         foreach (string _line in _lines)
         {
             string[] parts = _line.Split("~");
 
-            Entry newEntry = new Entry();
-
-            newEntry._date = parts[0];
-            newEntry._promptText = parts[1];
-            newEntry._entryText = parts [2];
+            Entry newEntry = new Entry
+            {
+                _date = parts[0],
+                _promptText = parts[1],
+                _entryText = parts[2]
+            };
 
             _entries.Add(newEntry);
         }

@@ -42,6 +42,8 @@ class Program
 
             else if (choice == 3)
             {
+                newJournal = new Journal();
+
                 newJournal.LoadFromFile(Console.ReadLine());
             }
 
