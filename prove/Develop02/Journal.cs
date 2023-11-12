@@ -38,8 +38,6 @@ public class Journal
 
         _name = name[0];
 
-        Console.Write(_name);
-
         foreach (string line in lines.Skip(1))
         {
             string[] parts = line.Split("~");
