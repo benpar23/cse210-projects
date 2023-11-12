@@ -3,12 +3,16 @@ public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
 
+    public string _name;
+
     public void AddEntry(Entry newEntry)
     {
         _entries.Add(newEntry);
     }
     public void DisplayAll()
     {
+        Console.WriteLine($"{_name}'s Journal");
+
         foreach (Entry entry in _entries) 
         {
             entry.Display();
@@ -18,6 +22,8 @@ public class Journal
     {
         using (StreamWriter sw = new StreamWriter(file))
         {
+            sw.WriteLine($"{_name}'s Journal");
+            
             foreach (Entry entry in _entries)
             {
                 sw.WriteLine($"{entry._date}~{entry._promptText}~{entry._entryText}");
@@ -28,7 +34,7 @@ public class Journal
     {
         string[] lines = File.ReadAllLines(file);
 
-        foreach (string line in lines)
+        foreach (string line in lines.Skip(1))
         {
             string[] parts = line.Split("~");
 

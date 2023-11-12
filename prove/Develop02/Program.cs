@@ -6,8 +6,7 @@ class Program
         int choice = 0;
 
         Journal newJournal = new Journal();
-        
-        
+
         while (choice != 5)
         {
             Console.WriteLine("Please select one of the following choices:\r\n1. Write\r\n2. Display\r\n3. Load\r\n4. Save\r\n5. Quit");
@@ -41,6 +40,8 @@ class Program
 
             else if (choice == 3)
             {
+                Console.WriteLine("What is the file name?");
+
                 newJournal = new Journal();
 
                 newJournal.LoadFromFile(Console.ReadLine());
@@ -48,7 +49,13 @@ class Program
 
             else if (choice == 4)
             {
-                newJournal.SaveToFile(Console.ReadLine());
+                Console.WriteLine("What is your name?");
+
+                newJournal._name = Console.ReadLine();
+                
+                Console.WriteLine("What is the file name?");
+
+                newJournal.SaveToFile(Console.ReadLine());             
             }
         }
     }
