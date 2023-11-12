@@ -49,7 +49,7 @@ class Program
 
             else if (choice == 4)
             {
-                Console.WriteLine("What is your name?");
+                Console.Write("Please enter your name: ");
 
                 newJournal._name = Console.ReadLine();
                 
