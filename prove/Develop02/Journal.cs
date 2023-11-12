@@ -34,6 +34,12 @@ public class Journal
     {
         string[] lines = File.ReadAllLines(file);
 
+        string[] name = lines[0].Split("'");
+
+        _name = name[0];
+
+        Console.Write(_name);
+
         foreach (string line in lines.Skip(1))
         {
             string[] parts = line.Split("~");
