@@ -20,12 +20,27 @@ public class Journal
         {
             foreach (Entry _entry in _entries)
             {
-                sw.WriteLine($"Date: {_entry._date} - Prompt: {_entry._promptText}\r\n{_entry._entryText}\r\n");
+                sw.WriteLine($"{_entry._date}~{_entry._promptText}~{_entry._entryText}");
             }
         }
     }
     public void LoadFromFile(string file)
     {
-        StreamReader sr = new StreamReader(file);
+        // StreamReader sr = new StreamReader(file);
+        string[] _lines = File.ReadAllLines(file);
+
+
+        foreach (string _line in _lines)
+        {
+            string[] parts = _line.Split("~");
+
+            Entry newEntry = new Entry();
+
+            newEntry._date = parts[0];
+            newEntry._promptText = parts[1];
+            newEntry._entryText = parts [2];
+
+            _entries.Add(newEntry);
+        }
     }
 }
