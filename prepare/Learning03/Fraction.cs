@@ -31,5 +31,13 @@ public class Fraction
         _top = top;
     }
 
+    public int GetBottom()
+    {
+        return _bottom;
+    }
 
+    public void SetBottom(int bottom)
+    {
+        _bottom = bottom;
+    }
 }
