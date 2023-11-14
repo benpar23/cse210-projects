@@ -40,4 +40,24 @@ public class Fraction
     {
         _bottom = bottom;
     }
+
+    public string GetFractionString()
+    {
+        string topString = _top.ToString();
+        string bottomString = _bottom.ToString();
+
+        string fraction = $"{topString}/{bottomString}";
+
+        return fraction;
+    }
+
+    public double GetDecimalValue()
+    {
+        double top = _top;
+        double bottom = _bottom;
+
+        double decimalValue = top / bottom;
+
+        return decimalValue;
+    }
 }
