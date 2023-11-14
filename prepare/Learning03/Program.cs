@@ -6,16 +6,24 @@ class Program
     {
         Fraction simple = new Fraction();
 
-        Fraction wholeNumber = new Fraction(6);
+        Fraction wholeNumber = new Fraction(5);
 
-        Fraction complex = new Fraction(6,7);
+        Fraction complex = new Fraction(3,4);
 
-        wholeNumber.SetTop(3);
+        Fraction complexTwo = new Fraction(1,3);
 
-        Console.WriteLine(wholeNumber.GetTop());
+        Console.WriteLine(simple.GetFractionString());
+        Console.WriteLine(simple.GetDecimalValue());
 
-        complex.SetBottom(5);
+        Console.WriteLine(wholeNumber.GetFractionString());
+        Console.WriteLine(wholeNumber.GetDecimalValue());
 
-        Console.WriteLine(complex.GetBottom());
+        Console.WriteLine(complex.GetFractionString());
+        Console.WriteLine(complex.GetDecimalValue());
+
+        Console.WriteLine(complexTwo.GetFractionString());
+        Console.WriteLine(complexTwo.GetDecimalValue());
+
+        
     }
 }
