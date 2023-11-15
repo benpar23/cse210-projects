@@ -4,6 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Word word = new Word("poo");
+        Console.WriteLine(word.GetDisplayText());
+
+        Reference newRef = new Reference("1 Nephi", 4, 16);
+        Console.WriteLine(newRef.GetDisplayText());
+
     }
 }

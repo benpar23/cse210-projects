@@ -5,17 +5,25 @@ public class Word
 
     public Word(string text)
     {
-
+        _text = text;
     }
 
     public void Hide()
     {
+        if (_isHidden == true)
+        {
+            _text = "____";
+        }
 
+        GetDisplayText();
     }
 
     public void Show()
     {
-
+        if (_isHidden == false)
+        {
+            GetDisplayText();
+        }
     }
 
     public bool isHidden()
@@ -25,6 +33,6 @@ public class Word
 
     public string GetDisplayText()
     {
-        return "";
+        return _text;
     }
 }
