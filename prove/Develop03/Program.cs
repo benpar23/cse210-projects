@@ -10,6 +10,8 @@ class Program
         Reference newRef = new Reference("1 Nephi", 4, 16);
         Console.WriteLine(newRef.GetDisplayText());
 
+        
+
         // string random = "birthday";
 
         // string randomHidden = new string('_',random.Length);
