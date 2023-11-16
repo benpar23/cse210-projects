@@ -2,7 +2,7 @@ public class Scripture
 {
     private Reference _reference;
 
-    private List<Word> _words;
+    private List<Word> _words = new List<Word>();
 
     public Scripture(Reference Reference, string text)
     {
@@ -26,7 +26,7 @@ public class Scripture
 
     public string GetDisplayText()
     {
-        return "";
+        return $"{_reference.GetDisplayText()} {_words}";
     }
 
     public bool IsCompletelyHidden()
