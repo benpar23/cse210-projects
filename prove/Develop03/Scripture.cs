@@ -26,7 +26,14 @@ public class Scripture
 
     public string GetDisplayText()
     {
-        return $"{_reference.GetDisplayText()} {_words}";
+        string text = string.Empty;
+
+        foreach (Word word in _words)
+        {
+            text += $"{word.GetDisplayText()} ";
+        }
+        
+        return $"{_reference.GetDisplayText()} {text}";
     }
 
     public bool IsCompletelyHidden()
