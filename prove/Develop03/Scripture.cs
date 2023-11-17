@@ -38,6 +38,21 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
-        return true;
+        List<bool> hiddens = new List<bool>();
+
+        foreach (Word word in _words)
+        {
+            bool hidden = word.isHidden();
+            hiddens.Add(hidden);
+        }
+
+        if (hiddens.Contains(false))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

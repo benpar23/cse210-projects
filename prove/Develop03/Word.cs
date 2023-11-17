@@ -10,20 +10,12 @@ public class Word
 
     public void Hide()
     {
-        if (_isHidden == true)
-        {
-            _text = "____";
-        }
-
-        GetDisplayText();
+        _isHidden = true;
     }
 
     public void Show()
     {
-        if (_isHidden == false)
-        {
-            GetDisplayText();
-        }
+        _isHidden = false;
     }
 
     public bool isHidden()
@@ -40,6 +32,15 @@ public class Word
 
     public string GetDisplayText()
     {
-        return _text;
+        if (_isHidden == true)
+        {
+            string underscores = new string('_',_text.Length);
+            
+            return underscores;
+        }
+        else
+        {
+            return _text;
+        }
     }
 }
