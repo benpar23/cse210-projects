@@ -26,18 +26,49 @@ public class Scripture
 
         List<Word> hiddenWords = new List<Word>();
 
-        // for (int i = 0; i > numberToHide; i++)
+        List<bool> hiddens = new List<bool>();
 
-        while (hiddenWords.Count() < numberToHide)
+        foreach (Word word in _words)
         {
-            int index = random.Next(_words.Count);
-            
-            Word wordToHide = _words[index];
+            bool hidden = word.isHidden();
 
-            if (wordToHide.isHidden() == false)
+            if (hidden == true)
             {
-                wordToHide.Hide();
-                hiddenWords.Add(wordToHide);
+                hiddens.Add(hidden);
+            }
+        }
+
+        // for (int i = 0; i > numberToHide; i++)
+        if (hiddens.Count < (_words.Count - numberToHide))
+        {
+            while (hiddenWords.Count() < numberToHide)
+            {
+                int index = random.Next(_words.Count);
+                
+                Word wordToHide = _words[index];
+
+                if (wordToHide.isHidden() == false)
+                {
+                    wordToHide.Hide();
+                    hiddenWords.Add(wordToHide);
+                }
+            }
+        }
+        else
+        {
+            numberToHide = _words.Count - hiddens.Count;
+
+            while (numberToHide != 0)
+            {
+                int index = random.Next(_words.Count);
+                
+                Word wordToHide = _words[index];
+
+                if (wordToHide.isHidden() == false)
+                {
+                    wordToHide.Hide();
+                    numberToHide -= 1;
+                }
             }
         }
     }
