@@ -15,13 +15,31 @@ public class Scripture
         foreach (string wordText in finalSplit)
         {
             Word word = new Word(wordText);
+            word.Show();
             _words.Add(word);
         }
     }
 
     public void HideRandomWords(int numberToHide)
     {
+        Random random = new Random();
 
+        List<Word> hiddenWords = new List<Word>();
+
+        // for (int i = 0; i > numberToHide; i++)
+
+        while (hiddenWords.Count() < numberToHide)
+        {
+            int index = random.Next(_words.Count);
+            
+            Word wordToHide = _words[index];
+
+            if (wordToHide.isHidden() == false)
+            {
+                wordToHide.Hide();
+                hiddenWords.Add(wordToHide);
+            }
+        }
     }
 
     public string GetDisplayText()
