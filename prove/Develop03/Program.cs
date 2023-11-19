@@ -1,5 +1,6 @@
 using System;
 
+// Exceeded program requirements by allowing the program to grab a random scripture from a file (scriptures.txt) and properly display it for the Memorizer program.
 class Program
 {
     static void Main(string[] args)
