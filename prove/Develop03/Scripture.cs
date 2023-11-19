@@ -8,11 +8,9 @@ public class Scripture
     {
         _reference = Reference;
         
-        string[] firstSplit = text.Split("|");
+        string[] textSplit = text.Split(" ");
 
-        string[] finalSplit = firstSplit[1].Split(" ");
-
-        foreach (string wordText in finalSplit)
+        foreach (string wordText in textSplit)
         {
             Word word = new Word(wordText);
             word.Show();
@@ -38,7 +36,6 @@ public class Scripture
             }
         }
 
-        // for (int i = 0; i > numberToHide; i++)
         if (hiddens.Count < (_words.Count - numberToHide))
         {
             while (hiddenWords.Count() < numberToHide)

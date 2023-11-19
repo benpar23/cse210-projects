@@ -4,12 +4,46 @@ class Program
 {
     static void Main(string[] args)
     {
-        Reference newRef = new Reference("Matthew", 5, 14, 16);
+        string[] lines = File.ReadAllLines("scriptures.txt");
 
-        Scripture scripture = new Scripture(newRef,"Matthew 5: 14-16|Ye are the light of the world. A city that is set on an hill cannot be hid. Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house. Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.");
+        Random random = new Random();
+
+        int randomScripture = random.Next(lines.Count());
+
+        string[] parts = lines[randomScripture].Split('|');
+
+        string scriptureBook = parts[0];
+        int scriptureChapter = int.Parse(parts[1]);
+        int scriptureStartVerse = int.Parse(parts[2]);
+        int scriptureEndVerse = -5;
+        
+        if (parts[3] != " ")
+        {
+            scriptureEndVerse = int.Parse(parts[3]);
+        }
+        
+        string scriptureText = parts[4];
+
+        Reference newRef;
+
+        if (scriptureEndVerse != -5)
+        {
+            newRef = new Reference(scriptureBook, scriptureChapter, scriptureStartVerse, scriptureEndVerse);
+        }
+        else
+        {
+            newRef = new Reference(scriptureBook, scriptureChapter, scriptureStartVerse);
+        }
+        
+        Scripture scripture = new Scripture(newRef,scriptureText);
+
+        Console.Clear();
 
         Console.WriteLine(scripture.GetDisplayText());
 
+        Console.WriteLine();
+
+        Console.WriteLine("Press enter to continue or type 'quit' to finish");
         string userInput = Console.ReadLine();
 
         while (userInput != "quit")
@@ -25,6 +59,8 @@ class Program
                 break;
             }
             
+            Console.WriteLine();
+            Console.WriteLine("Press enter to continue or type 'quit' to finish");
             userInput = Console.ReadLine();
         }
     }
