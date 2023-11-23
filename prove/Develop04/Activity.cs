@@ -2,15 +2,15 @@ using System.Dynamic;
 
 public class Activity
 {
-    private string _name;
-    private string _description;
-    private int _duration;
+    protected string _name;
+    protected string _description;
+    protected int _duration;
 
-    public Activity(string name, string description, int duration)
+    public Activity()
     {
-        _name = name;
-        _description = description;
-        _duration = duration;
+        _name = "";
+        _description = "description";
+        _duration = 50;
     }
 
     public void DisplayStartingMessage()

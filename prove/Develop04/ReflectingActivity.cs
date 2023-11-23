@@ -3,9 +3,9 @@ public class ReflectingActivity : Activity
     private List<string> _prompts;
     private List<string> _questions;
 
-    public ReflectingActivity() : base(_name, _description, _duration)
+    public ReflectingActivity()
     {
-        string _name = "people";
+        _name = "people";
     }
 
     public void Run()
