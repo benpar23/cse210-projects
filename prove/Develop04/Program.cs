@@ -6,7 +6,7 @@ class Program
 {   
     static void Main(string[] args)
     {
-        int input = -1;
+        int input = 0;
 
         while (input != 4)
         {
@@ -15,9 +15,9 @@ class Program
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Start breathing activity\r\n2. Start reflecting activity\r\n3. Start listing activity\r\n4. Quit");
             Console.Write("Select a choice from the menu: ");
-            int choice = int.Parse(Console.ReadLine());
+            input = int.Parse(Console.ReadLine());
 
-            if (choice == 1)
+            if (input == 1)
             {
                 BreathingActivity newActivity = new BreathingActivity();
 
@@ -29,7 +29,7 @@ class Program
 
                 newActivity.DisplayEndingMessage();
             }
-            else if (choice == 2)
+            else if (input == 2)
             {
                 ReflectingActivity newActivity = new ReflectingActivity();
 
