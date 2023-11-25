@@ -3,7 +3,7 @@ public class ReflectingActivity : Activity
     private List<string> _prompts;
     private List<string> _questions;
 
-    public ReflectingActivity(int duration)
+    public ReflectingActivity()
     {
         string name = "Reflecting";
         // SetName(name);
@@ -13,7 +13,7 @@ public class ReflectingActivity : Activity
 
         // SetDuration(duration);
 
-        SetInfo(name,description,duration);
+        SetInfo(name,description);
 
     }
 

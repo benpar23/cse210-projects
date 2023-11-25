@@ -9,7 +9,7 @@ public class Activity
     public Activity()
     {
         _name = "";
-        _description = "description";
+        _description = "";
         _duration = 30;
     }
 
@@ -19,7 +19,6 @@ public class Activity
         Console.WriteLine();
         Console.WriteLine(_description);
         Console.Write("How long, in seconds, would you like for your session? ");
-        _duration = int.Parse(Console.ReadLine());
     }
 
     public void DisplayEndingMessage()
@@ -90,15 +89,14 @@ public class Activity
     //     _description = description;
     // }
 
-    // public void SetDuration (int duration)
-    // {
-    //     _duration = duration;
-    // }
+    public void SetDuration (int duration)
+    {
+        _duration = duration;
+    }
 
-    public void SetInfo (string name, string description, int duration)
+    public void SetInfo (string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
     }
 }

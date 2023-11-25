@@ -18,12 +18,13 @@ class Program
 
             if (choice == 2)
             {
-            
-                ReflectingActivity newActivity = new ReflectingActivity(10);
+                ReflectingActivity newActivity = new ReflectingActivity();
 
                 Console.Clear();
-
+                
                 newActivity.DisplayStartingMessage();
+                
+                newActivity.SetDuration(int.Parse(Console.ReadLine()));
 
                 newActivity.ShowSpinner(10);
 
