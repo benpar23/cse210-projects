@@ -2,9 +2,9 @@ using System.Dynamic;
 
 public class Activity
 {
-    protected string _name;
-    protected string _description;
-    protected int _duration;
+    private string _name;
+    private string _description;
+    private int _duration;
 
     public Activity()
     {
@@ -35,5 +35,20 @@ public class Activity
     public void ShowCountdown(int seconds)
     {
         
+    }
+
+    public void SetName (string name)
+    {
+        _name = name;
+    }
+
+    public void SetDescription (string description)
+    {
+        _description = description;
+    }
+
+    public void SetDuration (int duration)
+    {
+        _duration = duration;
     }
 }

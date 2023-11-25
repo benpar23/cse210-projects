@@ -5,7 +5,11 @@ public class ReflectingActivity : Activity
 
     public ReflectingActivity()
     {
-        _name = "people";
+        string name = "Reflecting Activity";
+        SetName(name);
+
+        string description;
+
     }
 
     public void Run()
