@@ -6,6 +6,8 @@ class Program
     {
         Activity newActivity = new Activity();
 
+        Console.Clear();
+
         newActivity.ShowSpinner(10);
     }
 }
