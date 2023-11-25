@@ -19,13 +19,19 @@ public class Activity
         Console.WriteLine();
         Console.WriteLine(_description);
         Console.Write("How long, in seconds, would you like for your session? ");
+        SetDuration(int.Parse(Console.ReadLine()));
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        ShowSpinner(3);
     }
 
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!!");
         Console.WriteLine();
+        ShowSpinner(3);
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity.");
+        ShowSpinner(4);
     }
 
     public void ShowSpinner(int seconds)
@@ -40,14 +46,6 @@ public class Activity
         animations.Add("/");
         animations.Add("–");
         animations.Add("\\");
-    
-
-        // foreach (string s in animations)
-        // {
-        //     Console.Write(s);
-        //     Thread.Sleep(250);
-        //     Console.Write("\b \b");
-        // }
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds);
@@ -76,22 +74,18 @@ public class Activity
         {
             Console.Write(i);
             Thread.Sleep(1000);
+            Console.Write("\b \b");
         }
     }
-
-    // public void SetName (string name)
-    // {
-    //     _name = name;
-    // }
-
-    // public void SetDescription (string description)
-    // {
-    //     _description = description;
-    // }
 
     public void SetDuration (int duration)
     {
         _duration = duration;
+    }
+
+    public int GetDuration()
+    {
+        return _duration;
     }
 
     public void SetInfo (string name, string description)
