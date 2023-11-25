@@ -35,19 +35,39 @@ public class Activity
         {
             "|",
             "/",
-            "-",
+            "—",
             "\\",
             "|",
             "/",
-            "-",
+            "—",
             "\\"
         };
 
-        foreach (string s in animations)
+        // foreach (string s in animations)
+        // {
+        //     Console.Write(s);
+        //     Thread.Sleep(250);
+        //     Console.Write("\b \b");
+        // }
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+
+        int i = 0;
+
+        while (DateTime.Now < endTime)
         {
+            string s = animations[i];
             Console.Write(s);
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
+
+            i++;
+
+            if (i >= animations.Count)
+            {
+                i = 0;
+            }
         }
 
         Console.WriteLine("Done.");
