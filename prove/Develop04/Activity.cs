@@ -31,17 +31,17 @@ public class Activity
 
     public void ShowSpinner(int seconds)
     {
-        List<string> animations = new List<string>
-        {
-            "|",
-            "/",
-            "—",
-            "\\",
-            "|",
-            "/",
-            "—",
-            "\\"
-        };
+        List<string> animations = new List<string>();
+        
+        animations.Add("|");
+        animations.Add("/");
+        animations.Add("–");
+        animations.Add("\\");
+        animations.Add("|");
+        animations.Add("/");
+        animations.Add("–");
+        animations.Add("\\");
+    
 
         // foreach (string s in animations)
         // {
@@ -69,14 +69,15 @@ public class Activity
                 i = 0;
             }
         }
-
-        Console.WriteLine("Done.");
-
     }
 
     public void ShowCountdown(int seconds)
     {
-        
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+        }
     }
 
     // public void SetName (string name)

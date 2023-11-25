@@ -1,13 +1,34 @@
 using System;
+using System.ComponentModel.Design;
 
 class Program
-{
+{   
     static void Main(string[] args)
     {
-        Activity newActivity = new Activity();
+        int input = -1;
 
-        Console.Clear();
+        while (input != 4)
+        {
+            Console.Clear();
 
-        newActivity.ShowSpinner(10);
+            Console.Write("Menu Options:");
+            Console.Write("1. Start breathing activity\r\n2. Start reflecting activity\r\n3.Start listing activity\r\n4.Quit");
+            Console.Write("Select a choice from the menu: ");
+            int choice = int.Parse(Console.ReadLine());
+
+            if (choice == 2)
+            {
+            
+                ReflectingActivity newActivity = new ReflectingActivity(10);
+
+                Console.Clear();
+
+                newActivity.DisplayStartingMessage();
+
+                newActivity.ShowSpinner(10);
+
+                newActivity.DisplayEndingMessage();
+            }
+        }
     }
-}
+}   
