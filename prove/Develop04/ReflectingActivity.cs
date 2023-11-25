@@ -3,12 +3,17 @@ public class ReflectingActivity : Activity
     private List<string> _prompts;
     private List<string> _questions;
 
-    public ReflectingActivity()
+    public ReflectingActivity(int duration)
     {
-        string name = "Reflecting Activity";
-        SetName(name);
+        string name = "Reflecting";
+        // SetName(name);
 
-        string description;
+        string description = "This activity will help you reflect on times in your life when you ahve shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+        // SetDescription(description);
+
+        // SetDuration(duration);
+
+        SetInfo(name,description,duration);
 
     }
 
