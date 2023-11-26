@@ -31,6 +31,7 @@ class Program
                 newActivity.Run();
 
                 newActivity.DisplayEndingMessage();
+                
                 breathingLog++;
             }
             else if (input == 2)

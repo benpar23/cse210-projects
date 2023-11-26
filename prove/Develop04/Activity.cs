@@ -18,10 +18,11 @@ public class Activity
         Console.WriteLine($"Welcome to the {_name} Activity.");
         Console.WriteLine();
         Console.WriteLine(_description);
+        Console.WriteLine();
         Console.Write("How long, in seconds, would you like for your session? ");
         SetDuration(int.Parse(Console.ReadLine()));
         Console.Clear();
-        Console.Write("Get ready... ");
+        Console.WriteLine("Get ready... ");
         ShowSpinner(4);
         Console.WriteLine();
     }
@@ -58,7 +59,7 @@ public class Activity
         {
             string s = animations[i];
             Console.Write(s);
-            Thread.Sleep(300);
+            Thread.Sleep(200);
             Console.Write("\b \b");
 
             i++;

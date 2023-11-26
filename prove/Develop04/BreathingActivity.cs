@@ -17,12 +17,12 @@ public class BreathingActivity : Activity
 
         for (int i = breaths; i > 0; i = i - 2)
         {
-            Console.WriteLine();
             Console.Write("Breathe in...");
             ShowCountdown(4);
             Console.WriteLine();
             Console.Write("Now breathe out...");
             ShowCountdown(6);
+            Console.WriteLine();
             Console.WriteLine();
         }
     }
