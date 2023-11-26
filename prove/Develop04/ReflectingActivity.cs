@@ -71,13 +71,13 @@ public class ReflectingActivity : Activity
         return _questions[i];
     }
 
-    public void DisplayPrompt()
+    private void DisplayPrompt()
     {
         string prompt = GetRandomPrompt();
         Console.WriteLine($" --- {prompt} ---");
     }
 
-    public void DisplayQuestion()
+    private void DisplayQuestion()
     {
         string question = GetRandomQuestion();
         Console.Write($"> {question} ");

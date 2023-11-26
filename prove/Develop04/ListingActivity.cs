@@ -1,7 +1,7 @@
 public class ListingActivity : Activity
 {
-    int _count;
-    List<string> _prompts = new List<string>();
+    private int _count;
+    private List<string> _prompts = new List<string>();
 
     public ListingActivity()
     {
@@ -42,7 +42,7 @@ public class ListingActivity : Activity
         Console.WriteLine($" --- {prompt} ---");          
     }
 
-    public List<string> GetListFromUser()
+    private List<string> GetListFromUser()
     {
         List<string> list = new List<string>();
 
