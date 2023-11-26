@@ -24,6 +24,7 @@ public class ListingActivity : Activity
         GetRandomPrompt();
         Console.Write("You may begin in: ");
         ShowCountdown(5);
+        Console.WriteLine();
 
         List<string> list = GetListFromUser();
         _count = list.Count;
