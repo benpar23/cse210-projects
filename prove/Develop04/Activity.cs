@@ -21,12 +21,13 @@ public class Activity
         Console.Write("How long, in seconds, would you like for your session? ");
         SetDuration(int.Parse(Console.ReadLine()));
         Console.Clear();
-        Console.WriteLine("Get ready...");
-        ShowSpinner(3);
+        Console.Write("Get ready...");
+        ShowSpinner(4);
     }
 
     public void DisplayEndingMessage()
     {
+        Console.WriteLine();
         Console.WriteLine("Well done!!");
         Console.WriteLine();
         ShowSpinner(3);
@@ -56,7 +57,7 @@ public class Activity
         {
             string s = animations[i];
             Console.Write(s);
-            Thread.Sleep(250);
+            Thread.Sleep(300);
             Console.Write("\b \b");
 
             i++;

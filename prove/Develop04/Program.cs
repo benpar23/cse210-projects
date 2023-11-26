@@ -1,6 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.Design;
 
 class Program
 {   
@@ -37,7 +35,13 @@ class Program
                 
                 newActivity.DisplayStartingMessage();
 
+                newActivity.Run();
+
                 newActivity.DisplayEndingMessage();
+            }
+            else if (input == 3)
+            {
+                
             }
         }
     }
