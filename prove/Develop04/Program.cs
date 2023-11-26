@@ -41,7 +41,15 @@ class Program
             }
             else if (input == 3)
             {
+                ListingActivity newActivity = new ListingActivity();
                 
+                Console.Clear();
+
+                newActivity.DisplayStartingMessage();
+
+                newActivity.Run();
+
+                newActivity.DisplayEndingMessage();
             }
         }
     }

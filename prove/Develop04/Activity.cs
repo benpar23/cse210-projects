@@ -21,8 +21,9 @@ public class Activity
         Console.Write("How long, in seconds, would you like for your session? ");
         SetDuration(int.Parse(Console.ReadLine()));
         Console.Clear();
-        Console.Write("Get ready...");
+        Console.Write("Get ready... ");
         ShowSpinner(4);
+        Console.WriteLine();
     }
 
     public void DisplayEndingMessage()
