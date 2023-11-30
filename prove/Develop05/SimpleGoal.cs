@@ -4,4 +4,9 @@ public class SimpleGoal : Goal
     {
         
     }
+
+    public override bool isComplete()
+    {
+        return false;
+    }
 }
