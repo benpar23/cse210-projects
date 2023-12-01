@@ -52,12 +52,12 @@ public class GoalManager
 
     public void ListGoalNames()
     {
-
+        
     }
 
     public void ListGoalDetails()
     {
-        
+
     }
 
     public void CreateGoal()

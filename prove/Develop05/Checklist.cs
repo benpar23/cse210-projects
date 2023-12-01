@@ -30,7 +30,7 @@ public class Checklist : Goal
 
     public override string GetDetailsString()
     {
-        return "different";
+        return $"[ ] {_shortName} ({_description} -- Currently completed: {_amountCompleted}/{_target})";
     }
 
     public override string GetStringRepresentation()
