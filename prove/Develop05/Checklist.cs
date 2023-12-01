@@ -14,4 +14,9 @@ public class Checklist : Goal
     {
         return "different";
     }
+
+    public override string GetStringRepresentation()
+    {
+        return "2";
+    }
 }

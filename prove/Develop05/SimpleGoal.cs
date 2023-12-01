@@ -9,4 +9,9 @@ public class SimpleGoal : Goal
     {
         return false;
     }
+
+    public override string GetStringRepresentation()
+    {
+        return "1";
+    }
 }

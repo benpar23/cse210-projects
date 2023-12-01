@@ -20,5 +20,5 @@ public abstract class Goal
         return "";
     }
 
-
+    public abstract string GetStringRepresentation();
 }
