@@ -18,7 +18,14 @@ public class Checklist : Goal
 
     public override bool isComplete()
     {
-        return false;
+        if (_amountCompleted / _target == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override string GetDetailsString()
