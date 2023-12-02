@@ -3,11 +3,13 @@ public class GoalManager
 {
     List<Goal> _goals;
     int _score;
+    string _level;
 
     public GoalManager()
     {
         _goals = new List<Goal>();
         _score = 0;
+        _level = "1";
     }
 
     public void Start()
@@ -48,7 +50,7 @@ public class GoalManager
     public void DisplayPlayerInfo()
     {
         Console.WriteLine();
-        Console.WriteLine($"You have {_score} points.");
+        Console.WriteLine($"You have {_score} points -- Current Level: {_level}");
         Console.WriteLine();
     }
 
@@ -195,6 +197,8 @@ public class GoalManager
         {
             Console.WriteLine("This goal has already been completed.");
         }
+
+        LevelUp();
     }
 
     public void SaveGoals()
@@ -205,7 +209,7 @@ public class GoalManager
 
         using (StreamWriter sw = new StreamWriter(file))
         {
-            sw.WriteLine(_score);
+            sw.WriteLine($"{_score},{_level}");
             
             foreach (Goal goal in _goals)
             {
@@ -222,7 +226,10 @@ public class GoalManager
 
         string[] lines = File.ReadAllLines(file);
 
-        _score = int.Parse(lines[0]);
+        string[] firstLine = lines[0].Split(",");
+
+        _score = int.Parse(firstLine[0]);
+        _level = firstLine[1];
 
         foreach (string line in lines.Skip(1))
         {
@@ -260,9 +267,34 @@ public class GoalManager
 
                 _goals.Add(newGoal);
             }
-
         }
+    }
 
-
+    public void LevelUp()
+    {
+        if (_score < 500)
+        {
+            _level = "1";
+        }
+        else if (_score >= 500)
+        {
+            _level = "2";
+        }
+        else if (_score >= 1150)
+        {
+            _level = "3";
+        }
+        else if (_score >= 2645)
+        {
+            _level = "4";
+        }
+        else if (_score >= 6084)
+        {
+            _level = "5";
+        }
+        else
+        {
+            _level = "Master";
+        }
     }
 }
