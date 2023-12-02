@@ -17,7 +17,16 @@ public abstract class Goal
 
     public virtual string GetDetailsString()
     {
-        return $"[ ] {_shortName} ({_description})";
+        bool complete = isComplete();
+
+        if (complete)
+        {
+            return $"[X] {_shortName} ({_description})";
+        }
+        else
+        {
+            return $"[ ] {_shortName} ({_description})";
+        }
     }
 
     public abstract string GetStringRepresentation();

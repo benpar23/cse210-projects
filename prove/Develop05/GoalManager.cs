@@ -22,7 +22,6 @@ public class GoalManager
             Console.Write("Select a choice from the menu: ");
             choice = int.Parse(Console.ReadLine());
             
-            
             if (choice == 1)
             {
                 CreateGoal();
@@ -48,22 +47,44 @@ public class GoalManager
 
     public void DisplayPlayerInfo()
     {
+        Console.WriteLine();
         Console.WriteLine($"You have {_score} points.");
+        Console.WriteLine();
     }
 
     public void ListGoalNames()
     {
+        int i = 0;
+        
         foreach (Goal goal in _goals)
         {
-            int i = 1;
+            i++;
             
-            Console.WriteLine($"{i}. {goal}");
+            string goalDetails = goal.GetStringRepresentation();
+
+            string[] first = goalDetails.Split(":");
+
+            string[] details = first[1].Split(",");
+
+            string goalName = details[0];
+
+            Console.WriteLine($"{i}. {goalName}");
         }
     }
 
     public void ListGoalDetails()
     {
+        int i = 0;
 
+        Console.WriteLine("The goals are:");
+        
+        foreach (Goal goal in _goals)
+        {
+            i++;
+
+            string details = goal.GetDetailsString();
+            Console.WriteLine($"{i}. {details}");
+        }
     }
 
     public void CreateGoal()
@@ -119,14 +140,33 @@ public class GoalManager
             Console.Write("What is the bonus for accomplishing it that many times? ");
             int bonus = int.Parse(Console.ReadLine());
 
-            Checklist newGoal = new Checklist(name, description, points, target, bonus);
+            ChecklistGoal newGoal = new ChecklistGoal(name, description, points, target, bonus);
             _goals.Add(newGoal);
         }
     }
 
     public void RecordEvent()
     {
+        Console.WriteLine("The goals are:");
+        
         ListGoalNames();
+
+        Console.Write("Which goal did you accomplish? ");
+        int i = int.Parse(Console.ReadLine()) - 1;
+
+        _goals[i].RecordEvent();
+
+        string goalDetails = _goals[i].GetStringRepresentation();
+
+        string[] first = goalDetails.Split(":");
+
+        string[] details = first[1].Split(",");
+
+        string points = details[2];
+
+        _score += int.Parse(points);
+
+        Console.WriteLine($"You now have {_score} points.");
     }
 
     public void SaveGoals()
@@ -154,6 +194,4 @@ public class GoalManager
 
 
     }
-
-
 }
