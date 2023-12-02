@@ -154,40 +154,47 @@ public class GoalManager
         Console.Write("Which goal did you accomplish? ");
         int i = int.Parse(Console.ReadLine()) - 1;
 
-        _goals[i].RecordEvent();
-
-        string goalDetails = _goals[i].GetStringRepresentation();
-
-        string[] first = goalDetails.Split(":");
-
-        string[] details = first[1].Split(",");
-
-        string points = details[2];
-
-        string type = first[0];
-
-        if (type == "ChecklistGoal")
+        if (_goals[i].isComplete() == false)
         {
-            int total = int.Parse(details[3]) + int.Parse(points);
+            _goals[i].RecordEvent();
 
-            if (_goals[i].isComplete())
+            string goalDetails = _goals[i].GetStringRepresentation();
+
+            string[] first = goalDetails.Split(":");
+
+            string[] details = first[1].Split(",");
+
+            string points = details[2];
+
+            string type = first[0];
+
+            if (type == "ChecklistGoal")
             {
-                Console.WriteLine($"Congratulations! You have earned {total} points!");
-                _score += total;
+                int total = int.Parse(details[3]) + int.Parse(points);
+
+                if (_goals[i].isComplete())
+                {
+                    Console.WriteLine($"Congratulations! You have earned {total} points!");
+                    _score += total;
+                }
+                else
+                {
+                    Console.WriteLine($"Congratulations! You have earned {points} points!");
+                    _score += int.Parse(points);
+                }
             }
             else
             {
                 Console.WriteLine($"Congratulations! You have earned {points} points!");
                 _score += int.Parse(points);
             }
+
+            Console.WriteLine($"You now have {_score} points.");
         }
         else
         {
-            Console.WriteLine($"Congratulations! You have earned {points} points!");
-            _score += int.Parse(points);
+            Console.WriteLine("This goal has already been completed.");
         }
-
-        Console.WriteLine($"You now have {_score} points.");
     }
 
     public void SaveGoals()
@@ -246,7 +253,7 @@ public class GoalManager
 
                 int amountCompleted = int.Parse(parts[5]);
 
-                for (int i = 0; i > amountCompleted; i++)
+                for (int i = 0; i < amountCompleted; i++)
                 {
                     newGoal.RecordEvent();
                 }
