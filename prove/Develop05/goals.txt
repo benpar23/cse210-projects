@@ -1,0 +1,4 @@
+680
+SimpleGoal:Finish my project,Finish the programming assignment,100,True
+EternalGoal:Read scriptures,Read a chapter from any book of scripture,50
+ChecklistGoal:Practice piano,Practice for 15 mins,30,200,5,6
