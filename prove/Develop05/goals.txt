@@ -1,4 +1,4 @@
-680,2
-SimpleGoal:Finish my project,Finish the programming assignment,100,True
+0,1
+SimpleGoal:Get an A,Achieve the mark of A on any assignment,100,False
 EternalGoal:Read scriptures,Read a chapter from any book of scripture,50
-ChecklistGoal:Practice piano,Practice for 15 mins,30,200,5,6
+ChecklistGoal:Practice piano,Practice for 15 mins,40,300,3,0

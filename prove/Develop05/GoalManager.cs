@@ -145,6 +145,10 @@ public class GoalManager
             ChecklistGoal newGoal = new ChecklistGoal(name, description, points, target, bonus);
             _goals.Add(newGoal);
         }
+        else
+        {
+            Console.WriteLine("That is not a valid choice.");
+        }
     }
 
     public void RecordEvent()
