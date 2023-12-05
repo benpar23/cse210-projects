@@ -22,9 +22,12 @@ class Program
 
         double totalPrice = orderOne.GetTotal();
 
+        Console.WriteLine();
         Console.WriteLine(packingLabel);
-        Console.WriteLine(totalPrice);
+        Console.WriteLine();
+        Console.WriteLine($"Total Price: ${totalPrice}\r\n");
         Console.WriteLine(shippingLabel);
+        Console.WriteLine();
 
     }
 }
