@@ -42,7 +42,7 @@ public class Order
             label += $"{i}. {labelInfo}";
         }
         
-        return label;
+        return $"PACKING LIST\r\n{label}";
     }
 
     public string GetShippingLabel()
@@ -52,7 +52,7 @@ public class Order
 
        string addressString = address.GetAddress();
        
-       return $"{customerName}\r\n{addressString}";
+       return $"SHIP TO\r\n{customerName}\r\n{addressString}";
     }
 
     public void AddProduct(Product product)

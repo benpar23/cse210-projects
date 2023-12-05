@@ -20,6 +20,20 @@ public class Product
 
     public string GetLabelInfo()
     {
-        return $"{_name} - {_productID}\r\n";
+        if (_quantity > 1)
+        {
+            string label = "";
+            
+            for (int i = 0; i < _quantity; i++)
+            {
+                label += $"{_name} - {_productID}\r\n";
+            }
+
+            return label;
+        }
+        else
+        {
+            return $"{_name} - {_productID}\r\n";
+        }
     }
 }
