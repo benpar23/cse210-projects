@@ -3,15 +3,19 @@ public class Customer
     private string _name;
     private Address _address;
 
-    public Customer(string name, Address address)
+    public Customer(string name)
     {
         _name = name;
-        _address = address;
     }
 
     public Address GetAddress()
     {
         return _address;
+    }
+
+    public void SetAddress(string streetAddress, string city, string state, string country)
+    {
+        _address = new Address(streetAddress, city, state, country);
     }
 
     public string GetName()

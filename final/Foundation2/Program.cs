@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Address addressOne = new Address("30 Saltzburg Crescent", "Keswick", "ON", "Canada");
-        Customer customerOne = new Customer("Ben Parada", addressOne);
+        Customer customerOne = new Customer("Ben Parada");
+        customerOne.SetAddress("30 Saltzburg Crescent", "Keswick", "ON", "Canada");
 
         Product productOne = new Product("Shampoo", "005", 5.49, 2);
         Product productTwo = new Product("Soap", "004", 2.5, 1);
@@ -28,6 +28,5 @@ class Program
         Console.WriteLine($"Total Price: ${totalPrice}\r\n");
         Console.WriteLine(shippingLabel);
         Console.WriteLine();
-
     }
 }
