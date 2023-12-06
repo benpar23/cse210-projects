@@ -27,15 +27,8 @@ public class Product
 
     public string GetLabelInfo()
     {
-       int quantity = GetQuantity();
+        int quantity = GetQuantity();
 
-       if (quantity > 1)
-       {
-        return $"{_name} -\t {_productID,8} x {quantity}\r\n";
-       }
-       else
-       {
-        return $"{_name} -\t {_productID,8}\r\n";
-       }
+        return $"{_name,-10}\t{_productID,-5}\t{quantity,-5}\r\n";
     }
 }

@@ -34,16 +34,22 @@ public class Order
         string label = "";
 
         int i = 0;
+
+        string nameTitle = "PRODUCT NAME";
+        string idTitle = "ID";
+        string quantityTitle = "QUANTITY";
+
+        string title = $"{nameTitle,-10}\t{idTitle,-5}\t{quantityTitle,-5}\r\n\r\n";
         
         foreach (Product product in _products)
         {
             i++;
             string labelInfo = product.GetLabelInfo();
 
-            label += $"{i}. {labelInfo}";
+            label += $"{labelInfo}";
         }
         
-        return $"PACKING LIST\r\n{label}";
+        return $"PACKING LIST\r\n\r\n{title}{label}";
     }
 
     public string GetShippingLabel()
