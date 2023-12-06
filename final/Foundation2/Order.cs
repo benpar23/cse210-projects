@@ -39,6 +39,7 @@ public class Order
         {
             i++;
             string labelInfo = product.GetLabelInfo();
+
             label += $"{i}. {labelInfo}";
         }
         

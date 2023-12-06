@@ -18,22 +18,24 @@ public class Product
         return _price * _quantity;
     }
 
+    public int GetQuantity()
+    {
+        int quantity = (int)_quantity;
+
+        return quantity;
+    }
+
     public string GetLabelInfo()
     {
-        if (_quantity > 1)
-        {
-            string label = "";
-            
-            for (int i = 0; i < _quantity; i++)
-            {
-                label += $"{_name} - {_productID}\r\n";
-            }
+       int quantity = GetQuantity();
 
-            return label;
-        }
-        else
-        {
-            return $"{_name} - {_productID}\r\n";
-        }
+       if (quantity > 1)
+       {
+        return $"{_name} -\t {_productID,8} x {quantity}\r\n";
+       }
+       else
+       {
+        return $"{_name} -\t {_productID,8}\r\n";
+       }
     }
 }
