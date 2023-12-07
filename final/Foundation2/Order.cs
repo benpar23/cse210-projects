@@ -57,7 +57,7 @@ public class Order
        string customerName = _customer.GetName();
        Address address = _customer.GetAddress();
 
-       string addressString = address.GetAddress();
+       string addressString = address.GetAddressString();
        
        return $"SHIP TO\r\n{customerName}\r\n{addressString}";
     }
