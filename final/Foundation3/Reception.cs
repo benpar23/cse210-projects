@@ -6,4 +6,9 @@ public class Reception : Event
     {
         
     }
+
+    public override string GetFullDetails()
+    {
+        throw new NotImplementedException();
+    }
 }

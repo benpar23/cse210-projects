@@ -6,4 +6,9 @@ public class OutdoorGathering : Event
     {
         
     }
+
+    public override string GetFullDetails()
+    {
+        throw new NotImplementedException();
+    }
 }

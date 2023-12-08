@@ -7,4 +7,9 @@ public class Lecture : Event
     {
 
     }
+
+    public override string GetFullDetails()
+    {
+        throw new NotImplementedException();
+    }
 }

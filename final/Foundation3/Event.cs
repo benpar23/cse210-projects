@@ -1,6 +1,6 @@
 using System.Reflection;
 
-public class Event
+public abstract class Event
 {
     private string _title;
     private string _description;
@@ -15,6 +15,18 @@ public class Event
         _date = date;
         _time = time;
         _address = address;
+    }
+
+    public string GetStandardDetails()
+    {
+        return "";
+    }
+
+    public abstract string GetFullDetails();
+
+    public string GetShortDescription()
+    {
+        return "";
     }
 
 }
