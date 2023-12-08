@@ -36,4 +36,9 @@ public abstract class Event
         
         return $"Event Type: {className}\r\nTitle: {_title}\r\nDate: {_date}";
     }
+
+    public void SetAddress(string streetAddress, string city, string state, string country)
+    {
+        _address = new Address(streetAddress, city, state, country);
+    }
 }
