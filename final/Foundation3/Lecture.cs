@@ -3,13 +3,18 @@ public class Lecture : Event
     private string _speaker;
     private int _capacity;
    
-    public Lecture(string title, string description, string date, string time) : base(title, description, date, time)
+    public Lecture(string title, string description, string date, string time, string speaker, int capacity) : base(title, description, date, time)
     {
-
+        _speaker = speaker;
+        _capacity = capacity;
     }
 
     public override string GetFullDetails()
     {
-        throw new NotImplementedException();
+        string standard = GetStandardDetails();
+
+        string fullDetails = $"{standard}\r\nGuest Speaker: {_speaker}\r\nVenue Capacity: {_capacity}";
+
+        return fullDetails;
     }
 }

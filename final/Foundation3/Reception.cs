@@ -2,13 +2,17 @@ public class Reception : Event
 {
     private string _rsvp;
     
-    public Reception(string title, string description, string date, string time) : base(title, description, date, time)
+    public Reception(string title, string description, string date, string time, string rsvp) : base(title, description, date, time)
     {
-        
+        _rsvp = rsvp;
     }
 
     public override string GetFullDetails()
     {
-        throw new NotImplementedException();
+        string standard = GetStandardDetails();
+
+        string fullDetails = $"{standard}\r\n{_rsvp}";
+
+        return fullDetails;
     }
 }
