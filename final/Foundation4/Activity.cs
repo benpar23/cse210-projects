@@ -25,10 +25,13 @@ public abstract class Activity
     public string GetSummary()
     {
         double pace = GetPace();
+        string paceString = String.Format("{0:0.0#}", pace);
         double speed = GetSpeed();
+        string speedString = String.Format("{0:0.0#}", speed);
         double distance = GetDistance();
+        string distanceString = String.Format("{0:0.0#}", distance);
         string type = GetType().Name;
 
-        return $"{_date} {type} ({_length} min)- Distance {distance} km, Speed {speed} km/h, Pace: {pace} min per km";
+        return $"{_date} {type} ({_length} min)- Distance {distanceString} km, Speed {speedString} km/h, Pace: {paceString} min per km";
     }
 }
