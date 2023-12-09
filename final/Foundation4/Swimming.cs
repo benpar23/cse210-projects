@@ -1,24 +1,34 @@
 public class Swimming : Activity
 {
-    private double _numberOfLaps;
+    private double _swimmingLaps;
 
     public Swimming(string date, double length, double numberOfLaps) : base(date, length)
     {
-        _numberOfLaps = numberOfLaps;
+        _swimmingLaps = numberOfLaps;
     }
 
     public override double GetDistance()
     {
-        throw new NotImplementedException();
+        double distance = _swimmingLaps * 50 / 1000;
+
+        return distance;
     }
 
     public override double GetPace()
     {
-        throw new NotImplementedException();
+        double distance = GetDistance();
+        double length = GetLength();
+        double pace = length / distance;
+
+        return pace;
     }
 
     public override double GetSpeed()
     {
-        throw new NotImplementedException();
+        double distance = GetDistance();
+        double length = GetLength();
+        double speed = distance / length * 60;
+
+        return speed;
     }
 }

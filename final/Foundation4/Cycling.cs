@@ -9,16 +9,23 @@ public class Cycling : Activity
 
     public override double GetDistance()
     {
-        throw new NotImplementedException();
+        double length = GetLength();
+        double distance = _speed / 60 * length;
+
+        return distance;
     }
 
     public override double GetPace()
     {
-        throw new NotImplementedException();
+        double length = GetLength();
+        double distance = GetDistance();
+        double pace = length / distance;
+
+        return pace;
     }
 
     public override double GetSpeed()
     {
-        throw new NotImplementedException();
+        return _speed;
     }
 }

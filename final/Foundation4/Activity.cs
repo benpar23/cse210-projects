@@ -17,6 +17,11 @@ public abstract class Activity
 
     public abstract double GetDistance();
 
+    public double GetLength()
+    {
+        return _length;
+    }
+
     public string GetSummary()
     {
         double pace = GetPace();
@@ -24,6 +29,6 @@ public abstract class Activity
         double distance = GetDistance();
         string type = GetType().Name;
 
-        return $"{_date} {type} ({_length} min)- Distance {distance} miles, Speed {speed} mph, Pace: {pace} min per mile";
+        return $"{_date} {type} ({_length} min)- Distance {distance} km, Speed {speed} km/h, Pace: {pace} min per km";
     }
 }

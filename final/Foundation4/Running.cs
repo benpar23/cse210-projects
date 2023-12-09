@@ -9,16 +9,23 @@ public class Running : Activity
 
     public override double GetDistance()
     {
-        throw new NotImplementedException();
+        return _distance;
     }
 
     public override double GetPace()
     {
-        throw new NotImplementedException();
+        double length = GetLength();
+
+        double pace = length / _distance;
+
+        return pace;
     }
 
     public override double GetSpeed()
     {
-        throw new NotImplementedException();
+        double length = GetLength();
+        double speed = _distance / length * 60;
+
+        return speed;
     }
 }
