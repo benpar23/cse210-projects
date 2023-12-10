@@ -17,7 +17,7 @@ public class Order
             total += product.GetSubtotal();
         }
 
-        if (_customer.GetAddress().IsUSA())
+        if (_customer.IsUSA())
         {
             total += 5;
         }

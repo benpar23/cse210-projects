@@ -22,4 +22,16 @@ public class Customer
     {
         return _name;
     }
+
+    public bool IsUSA()
+    {
+        if(_address.IsUSA())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
