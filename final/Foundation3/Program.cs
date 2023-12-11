@@ -26,7 +26,9 @@ class Program
 
         foreach (Event e in events)
         {
+            Console.WriteLine();
             Console.WriteLine(e.GetFullDetails());
+            Console.WriteLine("--------------------------------------");
         }
     }
 }

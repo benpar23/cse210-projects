@@ -11,7 +11,7 @@ public class Reception : Event
     {
         string standard = GetStandardDetails();
 
-        string fullDetails = $"{standard}\r\n{_rsvp}";
+        string fullDetails = $"{standard}\r\n\r\n{_rsvp}";
 
         return fullDetails;
     }

@@ -20,7 +20,7 @@ public abstract class Event
     {
         string addressString = _address.GetAddressString();
         
-        return $"EVENT NAME: {_title}\r\nDescription: {_description}\r\nDate: {_date}\r\nTime: {_time}\r\n{addressString}";
+        return $"EVENT NAME: {_title}\r\nDescription: {_description}\r\nDate: {_date}\r\nTime: {_time}\r\nAddress: {addressString}";
     }
 
     public abstract string GetFullDetails();
