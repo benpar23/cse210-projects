@@ -1,5 +1,3 @@
-using System.IO.Pipes;
-
 public abstract class Activity
 {
     private string _date;
