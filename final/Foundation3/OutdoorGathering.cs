@@ -11,7 +11,7 @@ public class OutdoorGathering : Event
     {
         string standard = GetStandardDetails();
 
-        string fullDetails = $"{standard}\r\nWeather: {_weather}";
+        string fullDetails = $"{standard}\r\nWeather Forecast: {_weather}";
 
         return fullDetails;
     }

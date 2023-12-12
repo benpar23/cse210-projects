@@ -6,7 +6,7 @@ class Program
     {
         List<Event> events = new List<Event>();
         
-        OutdoorGathering outdoorGathering = new OutdoorGathering("Hoedown", "Come join us for a fun-filled day at the ranch with a good old fashioned howdown! Dancing, great food and drink, and awesome company will make this an event you won't forget!", "07/06/24", "6:00p.m.", "Sunny");
+        OutdoorGathering outdoorGathering = new OutdoorGathering("Hoedown", "Come join us for a fun-filled day at the ranch with a good old fashioned howdown! Dancing, great food and drink, and awesome company will make this an event you won't forget!", "Jun. 7th, 2024", "6:00p.m.", "Sunny");
 
         outdoorGathering.SetAddress("123 Main St", "Atlanta", "Georgia", "USA");
 
@@ -18,7 +18,7 @@ class Program
 
         events.Add(lecture);
 
-        Reception reception = new Reception("Brian and Wendy's Wedding", "We would like to invite you to celebrate the union of Brian Henry Adams & Wendy Mary Frech in holy matrimony.", "September, 20th, 2025", "7:00 pm", "Please RSVP to brianadamwedding@gmail.com by July 1st, 2025");
+        Reception reception = new Reception("Brian and Wendy's Wedding", "We would like to invite you to celebrate the union of Brian Henry Adams & Wendy Mary Frech in holy matrimony.", "Sept. 20th, 2025", "7:00 pm", "Please RSVP to brianadamwedding@gmail.com by July 1st, 2025");
 
         reception.SetAddress("29 Stayner Drive", "Kitchener", "Ontario", "Canada");
 
@@ -26,6 +26,10 @@ class Program
 
         foreach (Event e in events)
         {
+            Console.WriteLine();
+            Console.WriteLine(e.GetShortDescription());
+            Console.WriteLine();
+            Console.WriteLine(e.GetStandardDetails());
             Console.WriteLine();
             Console.WriteLine(e.GetFullDetails());
             Console.WriteLine("--------------------------------------");
