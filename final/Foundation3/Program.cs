@@ -26,11 +26,11 @@ class Program
 
         foreach (Event e in events)
         {
-            Console.WriteLine();
+            Console.WriteLine("\r\nSHORT DESCRIPTION\r\n");
             Console.WriteLine(e.GetShortDescription());
-            Console.WriteLine();
+            Console.WriteLine("\r\nSTANDARD DESCRIPTION\r\n");
             Console.WriteLine(e.GetStandardDetails());
-            Console.WriteLine();
+            Console.WriteLine("\r\nFULL DESCRIPTION\r\n");
             Console.WriteLine(e.GetFullDetails());
             Console.WriteLine("--------------------------------------");
         }
