@@ -15,7 +15,6 @@ public class Running : Activity
     public override double GetPace()
     {
         double length = GetLength();
-
         double pace = length / _distance;
 
         return pace;
